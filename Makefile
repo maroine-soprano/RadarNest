@@ -20,12 +20,12 @@ up:
 	# Start the python app
 	python3 -m venv venv
 	pip3 install -r requirements.txt
-	uvicorn main:app --reload --port 8000 &
 	# Start the MongoDB, Frontend, and Backend
 	$(DOCKER_COMPOSE) up -d
 	# Import JSON files into MongoDB
 	docker cp ./database/$(USERS_JSON) mongodb-container:/data/$(USERS_JSON)
 	docker cp ./database/$(ACCOUNTS_JSON) mongodb-container:/data/$(ACCOUNTS_JSON)
+	uvicorn main:app --reload --port 8000
 
 load-data:
 	docker exec -it $(MONGO_CONTAINER) mongoimport --db $(DB_NAME) --collection users --file /data/$(USERS_JSON) --jsonArray
