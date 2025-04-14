@@ -105,7 +105,7 @@ make load-data```
 - `make load-data`:  
   Loads predefined JSON data into MongoDB to populate the platform with user data.
 
---
+---
 
 ### 🧪 Verifying Setup
 
