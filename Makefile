@@ -19,7 +19,7 @@ up:
 	docker container rm -f radar-frontend-container
 	# Start the python app
 	python3 -m venv venv
-	pip3 install -r requirements.txt
+	venv/bin/pip install -r requirements.txt
 	# Start the MongoDB, Frontend, and Backend
 	$(DOCKER_COMPOSE) up -d
 	# Import JSON files into MongoDB
