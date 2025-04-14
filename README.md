@@ -56,7 +56,7 @@ Make sure you have the following tools installed:
 - [Git]
 - [Make]
 - [Docker]
-- [Python 3.10+](https://www.python.org/)
+- [Python 3+](https://www.python.org/)
 
 > 💡 If `make` is not installed:
 - **macOS**: `brew install make`
@@ -77,6 +77,7 @@ cd RadarNest
 make download-model
 
 # 4. Launch the full stack (MongoDB, backend, frontend, LLM via llama.cpp, FastAPI)
+If you encounter any issues while using 'python3', update the Makefile to use 'python' instead.
 make up
 
 # 5. Load sample marketing data into MongoDB
