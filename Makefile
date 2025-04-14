@@ -8,7 +8,7 @@ ACCOUNTS_JSON = accounts.json
 # Targets
 .PHONY: up downloadModel verify down
 
-downloadModel:
+download-model:
 	mkdir -p models
 	curl -L -o models/mistral-7b-instruct-v0.2.Q4_K_M.gguf "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf?download=true"
 
@@ -26,6 +26,8 @@ up:
 	# Import JSON files into MongoDB
 	docker cp ./database/$(USERS_JSON) mongodb-container:/data/$(USERS_JSON)
 	docker cp ./database/$(ACCOUNTS_JSON) mongodb-container:/data/$(ACCOUNTS_JSON)
+
+load-data:
 	docker exec -it $(MONGO_CONTAINER) mongoimport --db $(DB_NAME) --collection users --file /data/$(USERS_JSON) --jsonArray
 	docker exec -it $(MONGO_CONTAINER) mongoimport --db $(DB_NAME) --collection accounts --file /data/$(ACCOUNTS_JSON) --jsonArray
 
