@@ -80,7 +80,7 @@ make download-model
 make up
 
 # 5. Load sample marketing data into MongoDB
-make load-data```
+make load-data
 ```
 
 ---
@@ -111,4 +111,4 @@ make load-data```
 
 Once the stack is running:
 
-- Open your browser and go to: [http://localhost:4200]
+- Open your browser and go to: http://localhost:4200
