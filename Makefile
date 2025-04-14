@@ -9,8 +9,8 @@ ACCOUNTS_JSON = accounts.json
 .PHONY: up downloadModel verify down
 
 downloadModel:
-	@mkdir -p models
-	@curl -L -o models/mistral-7b-instruct-v0.2.Q4_K_M.gguf "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf?download=true"
+	if not exist models mkdir models
+	curl -L -o models/mistral-7b-instruct-v0.2.Q4_K_M.gguf "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf?download=true"
 
 up:
 	# Remove existing containers
