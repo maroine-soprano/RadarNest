@@ -77,7 +77,7 @@ cd RadarNest
 make download-model
 
 # 4. Launch the full stack (MongoDB, backend, frontend, LLM via llama.cpp, FastAPI)
-If you encounter any issues while using 'python3', update the Makefile to use 'python' instead.
+  (#if you encounter any issues while using 'python3', update the Makefile to use 'python' instead.)
 make up
 
 # 5. Load sample marketing data into MongoDB
