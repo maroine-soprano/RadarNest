@@ -6,6 +6,11 @@
 
 ## 🧑‍💻 Tech Stack
 
+The project is structured into three separate repositories:
+
+The Frontend and Backend each have their own repositories (see below). Both have been containerized using Docker, and their respective images are published on Docker Hub.
+A Final Executable Repository to launch the project (this one) brings everything together. It includes: A Python-based service running a Large Language Model (LLM) using llama.cpp and FastAPI, providing AI-driven responses, A docker-compose.yml file that sets up containers for the Frontend, Backend, and MongoDB database.
+
 - **Frontend**: Angular -> https://github.com/maroine-soprano/RadarNest-Front-github
 - **Backend**: Node.js, Nest JS, GraphQL -> https://github.com/maroine-soprano/RadarNest-backend-github
 - **AI Engine**: LLama cpp, Mistral model, FastAPI
